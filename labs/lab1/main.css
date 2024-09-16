@@ -1,0 +1,17 @@
+body {
+    font-family: 'Oswald', 'sans-serif';
+    background-color: #b8b5ae;
+}
+
+#identification {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    border-style: double;
+}
+
+table {
+    border-collapse: collapse;
+}
