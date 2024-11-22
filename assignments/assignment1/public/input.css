@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    --accent: #bf1efc;
+}
+
+.pink {
+    --accent: #e80ef8 !important;
+}
+
+#error-modal {
+    @apply max-w-[40vw] rounded-lg;
+}
+
+.error-modal-header {
+    @apply min-h-12 bg-red-600 px-3 py-2 flex flex-row gap-1 items-center;
+}
+
+.error-modal-header-text {
+    @apply text-white font-extrabold text-lg;
+}
+
+.error-modal-content {
+    @apply divide-y divide-gray-500 flex flex-col px-4;
+}
+
+.error-modal-msg {
+    @apply my-4;
+}
+
+#close-modal {
+    @apply float-right bg-red-600 text-white font-bold px-4 py-2 mx-2 my-2 rounded-xl;
+}
+
+.material-symbols-outlined {
+    @apply text-white;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 50%);
+}
+
+#event-modal {
+    @apply flex flex-col text-white divide-y divide-calendar-border py-2 px-4 min-w-[50vw] bg-calendar-top rounded-xl;
+}
+
+.event-modal-header {
+    @apply text-center text-white font-bold text-2xl pb-2;
+}
+
+.event-modal-details {
+    @apply pt-2 flex flex-col gap-2;
+}
+
+.event-modal-detail-header {
+    @apply font-bold;
+}
+
+.event-modal-button-container {
+    @apply flex flex-row justify-end gap-2 mt-2 pt-2;
+}
+
+#delete-event {
+    @apply bg-red-600 px-4 py-4 rounded-xl;
+}
+
+#close-event-modal {
+    @apply p-4 rounded-xl;
+    background: var(--accent);
+}
+
+.out-of-range-date {
+    @apply !text-gray-500;
+}
+
+.day-number {
+    @apply mx-2 mt-1 mb-[-1];
+}
+
+.day-current {
+    @apply rounded-full h-6 w-6 mx-1 text-center justify-center;
+    background: var(--accent);
+}
+
+.calendar-square {
+    @apply bg-calendar-day w-full h-full text-calendar-text flex flex-col gap-1 hover:cursor-pointer;
+}
+
+.calendar-square-header {
+    @apply flex flex-row;
+}
+
+.number-header {
+    @apply flex-auto;
+}
+
+.weekday-header {
+    @apply flex-auto text-[#888888] font-bold;
+}
+
+.flex-spacer {
+    @apply flex-auto;
+}
+
+.event {
+    @apply rounded-full max-h-6 mx-2 bg-event-bg flex flex-row items-center gap-1 hover:cursor-pointer;
+}
+
+.indicator {
+    @apply rounded-full w-2 h-2 my-2 ml-2;
+    background: var(--accent);
+}
+
+.event-details {
+    @apply text-xs mr-1 overflow-ellipsis overflow-hidden whitespace-nowrap;
+}
+
+.event-overflow {
+    @apply text-xs self-center text-overflow-event-text;
+}
+
+h1 {
+    @apply font-bold text-2xl
+}
+
+.day-event-container {
+    @apply w-full px-2 py-1 bg-[#333333] flex flex-row gap-2 hover:cursor-pointer;
+}
+
+.day-event-accent {
+    @apply rounded-full w-2 pr-2;
+    background: var(--accent);
+}
+
+.day-event-info-container {
+    @apply flex flex-col;
+}
+
+.day-event-info {
+    @apply font-bold text-xl;
+}
+
+.modal {
+    @apply flex flex-col text-white divide-y divide-calendar-border py-2 px-4 min-w-[50vw] bg-calendar-top rounded-xl gap-8;
+}
+
+.modal input {
+    @apply p-2 rounded-xl;
+    background: #444444;
+}
+
+.button-accent {
+    @apply float-right text-white font-bold px-4 py-2 mx-1 my-2 rounded-xl;
+    background: var(--accent);
+}
+
+.button-neutral {
+    @apply float-right bg-[#444444] text-white font-bold px-4 py-2 mx-1 my-2 rounded-xl;
+}
+
+.button-danger {
+    @apply float-right bg-red-600 text-white font-bold px-4 py-2 mx-1 my-2 rounded-xl;
+}
+
+.dialog-form {
+    @apply flex flex-col divide-y divide-[#888888] gap-2;
+}
+
+.form-inputs-container {
+    @apply pt-2;
+}
+
+.form-inputs-container input {
+    @apply mb-2;
+}

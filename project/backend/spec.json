@@ -1,0 +1,189 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Dog Walking API",
+    "description": "amogus",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:21923"
+    }
+  ],
+  "paths": {
+    "/auth/login": {
+      "post": {
+        "description": "Login (Authentication)",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "description": "The user's username",
+                    "type": "string"
+                  },
+                  "password": {
+                    "description": "The user's password",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Login Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "token": {
+                      "description": "JWT representing the user's session",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing Parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenericError",
+                  "properties": {
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "missing_parameters": {
+                          "description": "Values correspond to missing parameters in the request body",
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid Credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenericError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/register": {
+      "post": {
+        "description": "Register (Authentication)",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "description": "The user's username",
+                    "type": "string"
+                  },
+                  "password": {
+                    "description": "The user's password",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/jobs": {
+      "get": {
+
+      },
+      "post": {
+
+      }
+    },
+    "/jobs/:id": {
+      "get": {
+
+      },
+      "patch": {
+
+      },
+      "delete": {
+
+      }
+    },
+    "/jobs/:id/accept": {
+      "post": {
+
+      }
+    },
+    "/users": {
+      "get": {
+
+      }
+    },
+    "/users/:user_id": {
+      "get": {
+
+      },
+      "patch": {
+
+      },
+      "delete": {
+
+      }
+    },
+    "/users/:user_id/dogs": {
+      "get": {
+
+      },
+      "post": {
+
+      }
+    },
+    "/users/:user_id/dogs/:id": {
+      "get": {
+
+      },
+      "patch": {
+
+      },
+      "delete": {
+
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "GenericError": {
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "message": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
